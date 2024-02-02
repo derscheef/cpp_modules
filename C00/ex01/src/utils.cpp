@@ -6,7 +6,7 @@
 /*   By: yscheef <yscheef@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 00:18:40 by yscheef           #+#    #+#             */
-/*   Updated: 2024/01/23 13:05:07 by yscheef          ###   ########.fr       */
+/*   Updated: 2024/02/02 11:56:17 by yscheef          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,10 +66,19 @@ std::string get_input(std::string prompt)
     return input;
 }
 
-bool is_command(std::string input, std::string command)
+std::string to_lowercase(const std::string &str)
 {
-    std::transform(input.begin(), input.end(), input.begin(), ::toupper);
-    return (command == input);
+    std::string lower_case_str = str;
+    for (size_t i = 0; i < lower_case_str.length(); ++i)
+    {
+        lower_case_str[i] = std::tolower(lower_case_str[i]);
+    }
+    return lower_case_str;
+}
+
+bool is_command(const std::string &command, const std::string &target)
+{
+    return to_lowercase(command) == to_lowercase(target);
 }
 
 std::string format(const std::string &field)

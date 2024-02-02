@@ -6,7 +6,7 @@
 /*   By: yscheef <yscheef@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 23:56:50 by yscheef           #+#    #+#             */
-/*   Updated: 2024/01/23 12:59:14 by yscheef          ###   ########.fr       */
+/*   Updated: 2024/02/02 11:56:56 by yscheef          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void printMenu(void);
 void printBoxStart(void);
 void printBoxEnd(void);
 std::string get_input(std::string prompt);
-bool is_command(std::string input, std::string command);
+bool is_command(const std::string &command, const std::string &target);
 std::string format(const std::string &field);
 
 #endif
