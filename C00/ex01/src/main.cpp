@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yscheef <yscheef@student.42vienna.com>     +#+  +:+       +#+        */
+/*   By: yscheef <yscheef@student.42vienna.at>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 23:57:00 by yscheef           #+#    #+#             */
-/*   Updated: 2024/01/23 12:05:33 by yscheef          ###   ########.fr       */
+/*   Updated: 2024/02/02 12:33:23 by yscheef          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ int main()
     {
         std::cout << "Phonebook> ";
         std::getline(std::cin, command);
-        if (std::cin.eof() || is_command(command, "EXIT"))
+        if (std::cin.eof() || command.compare("EXIT"))
             exit(0);
         else if (command == "")
             continue;
-        else if (is_command(command, "ADD"))
+        else if (command.compare("ADD"))
         {
             if (!phonebook.is_full())
                 phonebook.add_contact();
@@ -43,13 +43,13 @@ int main()
                 phonebook.add_contact();
             }
         }
-        else if (is_command(command, "SEARCH"))
+        else if (command.compare("SEARCH"))
             phonebook.search_contact();
-        else if (is_command(command, "ALL"))
+        else if (command.compare("ALL"))
             phonebook.print_all();
-        else if (is_command(command, "HELP"))
+        else if (command.compare("HELP"))
             printMenu();
-        else if (is_command(command, "CLEAR"))
+        else if (command.compare("CLEAR"))
             system("clear");
         else
             std::cout << "Invalid command!" << std::endl;
