@@ -6,7 +6,7 @@
 #    By: yscheef <yscheef@student.42vienna.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/21 18:10:05 by yscheef           #+#    #+#              #
-#    Updated: 2024/01/23 14:01:37 by yscheef          ###   ########.fr        #
+#    Updated: 2024/02/02 11:24:02 by yscheef          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,7 +52,7 @@ soft: CPPFLAGS =
 soft: fclean all
 
 test: $(OBJS_DIR)
-	@$(CPP) $(CPPFLAGS) src/Account.cpp src/test.cpp -o test_executable
+	@$(CPP) $(CPPFLAGS) src/Account.cpp src/tests.cpp -o test_executable
 	@./test_executable | sed 's/\[[0-9]\{8\}_[0-9]\{6\}\] //' > temp_log.txt
 	@sed 's/\[[0-9]\{8\}_[0-9]\{6\}\] //' 19920104_091532.log > temp_19920104_091532.log
 	@echo "Comparing output with log file..."
