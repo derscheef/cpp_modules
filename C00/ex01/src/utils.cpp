@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yscheef <yscheef@student.42vienna.com>     +#+  +:+       +#+        */
+/*   By: yscheef <yscheef@student.42vienna.at>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 00:18:40 by yscheef           #+#    #+#             */
-/*   Updated: 2024/02/02 11:56:17 by yscheef          ###   ########.fr       */
+/*   Updated: 2024/02/02 12:06:41 by yscheef          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,15 +53,15 @@ std::string get_input(std::string prompt)
         std::getline(std::cin, input);
         if (std::cin.eof())
             exit(0);
-        if (input.find_first_not_of(valid_chars) != std::string::npos)
+        else if (input.empty())
+            std::cout << "Field cannot be empty" << std::endl;
+        else if (input.find_first_not_of(valid_chars) != std::string::npos)
         {
             std::cout << "Input contains invalid characters." << std::endl;
             input.clear();
         }
         else
-        {
             break;
-        }
     }
     return input;
 }
