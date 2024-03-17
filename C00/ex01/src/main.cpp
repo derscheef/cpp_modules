@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yscheef <yscheef@student.42vienna.at>      +#+  +:+       +#+        */
+/*   By: ndivjak <ndivjak@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 23:57:00 by yscheef           #+#    #+#             */
-/*   Updated: 2024/02/02 12:33:23 by yscheef          ###   ########.fr       */
+/*   Updated: 2024/03/17 23:25:33 by ndivjak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,14 @@ int main()
 {
     Phonebook phonebook;
     std::string command;
-
-    system("clear");
     printMenu();
 
     while (true)
     {
         std::cout << "Phonebook> ";
         std::getline(std::cin, command);
-        if (std::cin.eof() || command.compare("EXIT"))
-            exit(0);
+        if (std::cin.eof() || is_command(command, "EXIT"))
+            exit(1);
         else if (command == "")
             continue;
         else if (command.compare("ADD"))
@@ -49,8 +47,6 @@ int main()
             phonebook.print_all();
         else if (command.compare("HELP"))
             printMenu();
-        else if (command.compare("CLEAR"))
-            system("clear");
         else
             std::cout << "Invalid command!" << std::endl;
     }

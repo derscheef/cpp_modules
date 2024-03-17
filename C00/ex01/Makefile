@@ -16,7 +16,7 @@ OBJS_DIR    = objs/
 OBJS        = $(SRCS:src/%.cpp=$(OBJS_DIR)%.o)
 OTHER_FILES  = $(wildcard *.dSYM) $(wildcard *.log) $(wildcard *.txt) $(wildcard *.out)
 
-CPP         = c++
+CPP         = g++
 CPPFLAGS    = -Wall -Wextra -Werror -std=c++98
 RM          = rm -fr
 MKDIR       = mkdir -p
