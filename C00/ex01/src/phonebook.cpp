@@ -69,7 +69,6 @@ void Phonebook::search_contact()
         std::cout << "Contact list is empty" << std::endl;
         return;
     }
-    system("clear");
     printBoxStart();
     std::cout << "\n|  Index|First Name| Last Name|  Nickname   |" << std::endl;
     for (int i = 0; i < contact_count; i += 1)
@@ -88,7 +87,10 @@ void Phonebook::search_contact()
         if (input != "0" && input.length() == 1 && isdigit(input[0]) && input[0] - '0' < contact_count + 1)
             break;
     }
-    print_contact(std::stoi(input) - 1);
+    std::istringstream iss(input);
+    int index = 0;
+    iss >> index;
+    print_contact(index - 1);
 }
 
 void Phonebook::remove_oldest()

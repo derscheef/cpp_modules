@@ -16,8 +16,6 @@ int main()
 {
     Phonebook phonebook;
     std::string command;
-
-    system("clear");
     printMenu();
 
     while (true)
@@ -25,7 +23,7 @@ int main()
         std::cout << "Phonebook> ";
         std::getline(std::cin, command);
         if (std::cin.eof() || is_command(command, "EXIT"))
-            exit(0);
+            exit(1);
         else if (command == "")
             continue;
         else if (is_command(command, "ADD"))
@@ -49,8 +47,6 @@ int main()
             phonebook.print_all();
         else if (is_command(command, "HELP"))
             printMenu();
-        else if (is_command(command, "CLEAR"))
-            system("clear");
         else
             std::cout << "Invalid command!" << std::endl;
     }

@@ -52,7 +52,7 @@ std::string get_input(std::string prompt)
         std::cout << "Enter " << prompt << ":" << std::endl;
         std::getline(std::cin, input);
         if (std::cin.eof())
-            exit(0);
+            exit(1);
         else if (input.empty())
             std::cout << "Field cannot be empty" << std::endl;
         else if (input.find_first_not_of(valid_chars) != std::string::npos)
