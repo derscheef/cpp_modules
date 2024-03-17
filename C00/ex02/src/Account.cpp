@@ -12,8 +12,8 @@
 /* ************************************************************************** */
 
 #include <iostream>
-#include <chrono>
 #include <iomanip>
+#include <ctime>
 #include "../headerfiles/Account.hpp"
 
 int Account::_totalAmount = 0;
@@ -135,16 +135,16 @@ void Account::displayStatus(void) const
 	std::cout << "withdrawals:" << this->_nbWithdrawals << std::endl;
 }
 
-void Account::_displayTimestamp(void)
+void Account::_displayTimestamp()
 {
-	std::chrono::time_point<std::chrono::system_clock> now = std::chrono::system_clock::now();
-	std::time_t time_now = std::chrono::system_clock::to_time_t(now);
+	std::time_t result = std::time(NULL);
 
-	tm utc_tm = *localtime(&time_now);
-	std::cout << std::setfill('0') << "[" << (utc_tm.tm_year + 1900)
-			  << std::setw(2) << utc_tm.tm_mon
-			  << std::setw(2) << utc_tm.tm_mday << "_"
-			  << std::setw(2) << utc_tm.tm_hour
-			  << std::setw(2) << utc_tm.tm_min
-			  << std::setw(2) << utc_tm.tm_sec << "] ";
+	std::cout << std::setfill('0') << "[" << 1900 + std::localtime(&result)->tm_year
+			  << std::setw(2) << 1 + std::localtime(&result)->tm_mon
+			  << std::setw(2) << std::localtime(&result)->tm_mday
+			  << "_"
+			  << std::setw(2) << std::localtime(&result)->tm_hour
+			  << std::setw(2) << std::localtime(&result)->tm_min
+			  << std::setw(2) << std::localtime(&result)->tm_sec
+			  << "] " << std::flush;
 }
