@@ -22,7 +22,7 @@ int main()
     {
         std::cout << "Phonebook> ";
         std::getline(std::cin, command);
-        if (std::cin.eof() || is_command(command, "EXIT"))
+        if (std::cin.eof() || command.compare("EXIT"))
             exit(1);
         else if (command == "")
             continue;
