@@ -60,6 +60,11 @@ std::string get_input(std::string prompt)
             std::cout << "Input contains invalid characters." << std::endl;
             input.clear();
         }
+        else if (input.length() == 0)
+        {
+            std::cout << "Input can't be empty." << std::endl;
+            input.clear();
+        }
         else
             break;
     }

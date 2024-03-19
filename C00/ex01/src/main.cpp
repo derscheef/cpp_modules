@@ -16,17 +16,19 @@ int main()
 {
     Phonebook phonebook;
     std::string command;
+    command = "";
+
     printMenu();
 
     while (true)
     {
         std::cout << "Phonebook> ";
         std::getline(std::cin, command);
-        if (std::cin.eof() || command.compare("EXIT"))
-            exit(1);
+        if (std::cin.eof() || command.compare("EXIT") == 0)
+            return 0;
         else if (command == "")
             continue;
-        else if (command.compare("ADD"))
+        else if (command.compare("ADD") == 0)
         {
             if (!phonebook.is_full())
                 phonebook.add_contact();
@@ -41,14 +43,14 @@ int main()
                 phonebook.add_contact();
             }
         }
-        else if (command.compare("SEARCH"))
+        else if (command.compare("SEARCH") == 0)
             phonebook.search_contact();
-        else if (command.compare("ALL"))
+        else if (command.compare("ALL") == 0)
             phonebook.print_all();
-        else if (command.compare("HELP"))
+        else if (command.compare("HELP") == 0)
             printMenu();
         else
             std::cout << "Invalid command!" << std::endl;
     }
-    return (0);
+    return 0;
 }
