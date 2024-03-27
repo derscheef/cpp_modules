@@ -6,17 +6,17 @@
 #    By: yscheef <yscheef@student.42vienna.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/21 18:10:05 by yscheef           #+#    #+#              #
-#    Updated: 2024/02/02 11:24:02 by yscheef          ###   ########.fr        #
+#    Updated: 2024/03/27 10:39:24 by yscheef          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME        := $(notdir $(patsubst %/,%,$(CURDIR)))
-SRCS        = $(wildcard src/*.cpp)
+SRCS        = src/Account.cpp src/tests.cpp
 OBJS_DIR    = objs/
 OBJS        = $(SRCS:src/%.cpp=$(OBJS_DIR)%.o)
 OTHER_FILES  = $(wildcard *.dSYM) $(wildcard *.log) $(wildcard *.txt) $(wildcard *.out)
 
-CPP         = g++
+CPP         = c++
 CPPFLAGS    = -Wall -Wextra -Werror -std=c++98
 RM          = rm -fr
 MKDIR       = mkdir -p

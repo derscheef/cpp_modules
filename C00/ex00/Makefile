@@ -3,20 +3,20 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ndivjak <ndivjakstudent.42vienna.com>     +#+  +:+       +#+         #
+#    By: yscheef <yscheef@student.42vienna.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/20 12:33:39 by yscheef           #+#    #+#              #
-#    Updated: 2024/03/17 20:10:21 by ndivjak          ###   ########.fr        #
+#    Updated: 2024/03/27 10:38:33 by yscheef          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME        = megaphone
-SRCS        = $(wildcard src/*.cpp)
+SRCS        = src/megaphone.cpp
 OBJS_DIR    = objs/
 OBJS        = $(SRCS:src/%.cpp=$(OBJS_DIR)%.o)
 OTHER_FILES  = $(wildcard *.dSYM) $(wildcard *.log) $(wildcard *.txt) $(wildcard *.out)
 
-CPP         = g++
+CPP         = c++
 CPPFLAGS    = -Wall -Wextra -Werror -std=c++98
 RM          = rm -fr
 MKDIR       = mkdir -p

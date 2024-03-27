@@ -6,17 +6,17 @@
 #    By: yscheef <yscheef@student.42vienna.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/21 18:10:05 by yscheef           #+#    #+#              #
-#    Updated: 2024/01/23 14:31:39 by yscheef          ###   ########.fr        #
+#    Updated: 2024/03/27 10:38:55 by yscheef          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME        = pb
-SRCS        = $(wildcard src/*.cpp)
+SRCS        = src/contact.cpp src/main.cpp src/phonebook.cpp src/utils.cpp
 OBJS_DIR    = objs/
 OBJS        = $(SRCS:src/%.cpp=$(OBJS_DIR)%.o)
 OTHER_FILES  = $(wildcard *.dSYM) $(wildcard *.log) $(wildcard *.txt) $(wildcard *.out)
 
-CPP         = g++
+CPP         = c++
 CPPFLAGS    = -Wall -Wextra -Werror -std=c++98
 RM          = rm -fr
 MKDIR       = mkdir -p
