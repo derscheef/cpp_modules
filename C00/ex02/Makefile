@@ -6,12 +6,12 @@
 #    By: yscheef <yscheef@student.42vienna.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/21 18:10:05 by yscheef           #+#    #+#              #
-#    Updated: 2024/03/27 10:39:24 by yscheef          ###   ########.fr        #
+#    Updated: 2024/03/29 09:58:47 by yscheef          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME        := $(notdir $(patsubst %/,%,$(CURDIR)))
-SRCS        = src/Account.cpp src/tests.cpp
+SRCS        = src/Account.cpp src/tests.cpp`
 OBJS_DIR    = objs/
 OBJS        = $(SRCS:src/%.cpp=$(OBJS_DIR)%.o)
 OTHER_FILES  = $(wildcard *.dSYM) $(wildcard *.log) $(wildcard *.txt) $(wildcard *.out)
