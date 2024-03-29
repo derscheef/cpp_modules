@@ -6,12 +6,12 @@
 #    By: yscheef <yscheef@student.42vienna.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/21 18:10:05 by yscheef           #+#    #+#              #
-#    Updated: 2024/01/23 14:39:48 by yscheef          ###   ########.fr        #
+#    Updated: 2024/03/29 10:39:58 by yscheef          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME        := $(notdir $(patsubst %/,%,$(CURDIR)))
-SRCS        = $(wildcard src/*.cpp)
+SRCS        = src/main.cpp src/HumanA.cpp src/HumanB.cpp src/weapon.cpp
 OBJS_DIR    = objs/
 OBJS        = $(SRCS:src/%.cpp=$(OBJS_DIR)%.o)
 OTHER_FILES  = $(wildcard *.dSYM) $(wildcard *.log) $(wildcard *.txt) $(wildcard *.out)

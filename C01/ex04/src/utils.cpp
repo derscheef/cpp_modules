@@ -6,31 +6,48 @@
 /*   By: yscheef <yscheef@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 07:16:42 by yscheef           #+#    #+#             */
-/*   Updated: 2024/01/22 07:16:53 by yscheef          ###   ########.fr       */
+/*   Updated: 2024/03/29 10:31:49 by yscheef          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headerfiles/Head.hpp"
 
-int replace(char **argv, std::string str)
+int ft_replace(const std::string &filename, const std::string &oldStr, const std::string &newStr)
 {
-    std::ofstream outfile;
-    int pos;
-
-    outfile.open((std::string(argv[1]) + ".replace").c_str());
-    if (outfile.fail())
-        return (1);
-    for (int i = 0; i < (int)str.size(); i++)
+    std::ifstream infile(filename.c_str()); // Convert std::string to const char* for compatibility
+    if (!infile.is_open())
     {
-        pos = str.find(argv[2], i);
-        if (pos != -1 && pos == i)
-        {
-            outfile << argv[3];
-            i += std::string(argv[2]).size() - 1;
-        }
-        else
-            outfile << str[i];
+        std::cout << "Error opening file: " << filename << std::endl;
+        return 1;
     }
+
+    std::string content((std::istreambuf_iterator<char>(infile)),
+                        std::istreambuf_iterator<char>());
+    infile.close();
+
+    std::ofstream outfile((filename + ".replace").c_str()); // Convert std::string to const char* here as well
+    if (!outfile.is_open())
+    {
+        std::cout << "Error creating output file." << std::endl;
+        return 1;
+    }
+
+    std::string result;
+    size_t pos = 0;
+    size_t lastPos = 0;
+
+    // Manual replacement logic remains unchanged
+    while ((pos = content.find(oldStr, lastPos)) != std::string::npos)
+    {
+        result += content.substr(lastPos, pos - lastPos);
+        result += newStr;
+        lastPos = pos + oldStr.length();
+    }
+
+    result += content.substr(lastPos);
+
+    outfile << result;
     outfile.close();
-    return (0);
+
+    return 0;
 }

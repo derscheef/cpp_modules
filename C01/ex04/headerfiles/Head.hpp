@@ -6,7 +6,7 @@
 /*   By: yscheef <yscheef@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 23:56:50 by yscheef           #+#    #+#             */
-/*   Updated: 2024/01/22 07:17:50 by yscheef          ###   ########.fr       */
+/*   Updated: 2024/03/29 10:22:20 by yscheef          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 #include <fstream>
 #include <iostream>
+#include <string>
 
-int replace(char **argv, std::string str);
+int ft_replace(const std::string &filename, const std::string &oldStr, const std::string &newStr);
 
 #endif

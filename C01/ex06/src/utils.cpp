@@ -6,7 +6,7 @@
 /*   By: yscheef <yscheef@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 16:25:33 by yscheef           #+#    #+#             */
-/*   Updated: 2024/01/23 16:33:37 by yscheef          ###   ########.fr       */
+/*   Updated: 2024/03/29 10:51:58 by yscheef          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,18 +24,27 @@ int harl_translate(std::string input)
 
 void check_level(std::string input, Harl &h)
 {
-    switch (harl_translate(input))
+    int level = harl_translate(input);
+
+    if (level == -1)
     {
-    case 0:
-        h.complain("DEBUG");
-    case 1:
-        h.complain("INFO");
-    case 2:
-        h.complain("WARNING");
-    case 3:
-        h.complain("ERROR");
-        break;
-    default:
         std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+        return;
+    }
+    if (level <= 0)
+    {
+        h.complain("DEBUG");
+    }
+    if (level <= 1)
+    {
+        h.complain("INFO");
+    }
+    if (level <= 2)
+    {
+        h.complain("WARNING");
+    }
+    if (level <= 3)
+    {
+        h.complain("ERROR");
     }
 }
