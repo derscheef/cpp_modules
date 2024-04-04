@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ndivjak <ndivjak@student.42vienna.com>     +#+  +:+       +#+        */
+/*   By: yscheef <yscheef@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 07:16:42 by yscheef           #+#    #+#             */
-/*   Updated: 2024/04/04 18:02:52 by ndivjak          ###   ########.fr       */
+/*   Updated: 2024/04/04 22:14:32 by yscheef          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int ft_replace(const std::string &filename, const std::string &oldStr, const std::string &newStr)
 {
-    std::ifstream infile(filename.c_str()); // Convert std::string to const char* for compatibility
+    std::ifstream infile(filename.c_str());
     if (!infile.is_open())
     {
         std::cout << "Error opening file: " << filename << std::endl;
@@ -25,7 +25,7 @@ int ft_replace(const std::string &filename, const std::string &oldStr, const std
                         std::istreambuf_iterator<char>());
     infile.close();
 
-    std::ofstream outfile((filename + ".replace").c_str()); // Convert std::string to const char* here as well
+    std::ofstream outfile((filename + ".replace").c_str());
     if (!outfile.is_open())
     {
         std::cout << "Error creating output file." << std::endl;
@@ -36,8 +36,6 @@ int ft_replace(const std::string &filename, const std::string &oldStr, const std
     size_t pos = 0;
     size_t lastPos = 0;
 
-    // TODO: Should probably remove ChatGPT style comments
-    // Manual replacement logic remains unchanged
     while ((pos = content.find(oldStr, lastPos)) != std::string::npos)
     {
         result += content.substr(lastPos, pos - lastPos);

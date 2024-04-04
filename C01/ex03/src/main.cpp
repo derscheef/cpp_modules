@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ndivjak <ndivjak@student.42vienna.com>     +#+  +:+       +#+        */
+/*   By: yscheef <yscheef@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 23:57:00 by yscheef           #+#    #+#             */
-/*   Updated: 2024/04/04 17:58:02 by ndivjak          ###   ########.fr       */
+/*   Updated: 2024/04/04 22:11:37 by yscheef          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headerfiles/Head.hpp"
-
-// TODO: remove ex03 from repo
 
 int main()
 {

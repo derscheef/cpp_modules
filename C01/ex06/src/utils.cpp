@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ndivjak <ndivjak@student.42vienna.com>     +#+  +:+       +#+        */
+/*   By: yscheef <yscheef@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 16:25:33 by yscheef           #+#    #+#             */
-/*   Updated: 2024/04/04 18:13:48 by ndivjak          ###   ########.fr       */
+/*   Updated: 2024/04/04 22:19:30 by yscheef          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ int harl_translate(std::string input)
     return (-1);
 }
 
-// TODO: No if statements
 void check_level(std::string input, Harl &h)
 {
     int level = harl_translate(input);
@@ -32,20 +31,22 @@ void check_level(std::string input, Harl &h)
         std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
         return;
     }
-    if (level <= 0)
+
+    switch (level)
     {
+    case 0:
         h.complain("DEBUG");
-    }
-    if (level <= 1)
-    {
+        // fallthrough
+    case 1:
         h.complain("INFO");
-    }
-    if (level <= 2)
-    {
+        // fallthrough
+    case 2:
         h.complain("WARNING");
-    }
-    if (level <= 3)
-    {
+        // fallthrough
+    case 3:
         h.complain("ERROR");
+        break;
+    default:
+        break;
     }
 }

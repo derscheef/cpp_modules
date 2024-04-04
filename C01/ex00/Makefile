@@ -6,11 +6,11 @@
 #    By: yscheef <yscheef@student.42vienna.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/21 18:10:05 by yscheef           #+#    #+#              #
-#    Updated: 2024/03/29 09:58:45 by yscheef          ###   ########.fr        #
+#    Updated: 2024/04/04 22:08:31 by yscheef          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME        := $(notdir $(patsubst %/,%,$(CURDIR)))
+NAME        := $(notdir $(patsubst %/,%,$(CURDIR))).out
 SRCS        = src/main.cpp src/newZombie.cpp src/randomChump.cpp src/Zombie.cpp
 OBJS_DIR    = objs/
 OBJS        = $(SRCS:src/%.cpp=$(OBJS_DIR)%.o)

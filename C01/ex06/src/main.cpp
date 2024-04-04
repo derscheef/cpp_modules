@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ndivjak <ndivjak@student.42vienna.com>     +#+  +:+       +#+        */
+/*   By: yscheef <yscheef@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 23:57:00 by yscheef           #+#    #+#             */
-/*   Updated: 2024/04/04 18:05:23 by ndivjak          ###   ########.fr       */
+/*   Updated: 2024/04/04 22:14:52 by yscheef          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headerfiles/Head.hpp"
-
-// TODO: Should remove harlFilter from repo
 
 int main(int argc, char **argv)
 {
