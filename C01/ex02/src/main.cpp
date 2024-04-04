@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yscheef <yscheef@student.42vienna.com>     +#+  +:+       +#+        */
+/*   By: ndivjak <ndivjak@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 23:57:00 by yscheef           #+#    #+#             */
-/*   Updated: 2024/01/22 06:48:25 by yscheef          ###   ########.fr       */
+/*   Updated: 2024/04/04 17:55:17 by ndivjak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+// TODO: Remove ex02 from repo
 
 #include "../headerfiles/Head.hpp"
 

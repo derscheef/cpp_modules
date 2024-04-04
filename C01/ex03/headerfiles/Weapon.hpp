@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yscheef <yscheef@student.42vienna.com>     +#+  +:+       +#+        */
+/*   By: ndivjak <ndivjak@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 07:11:20 by yscheef           #+#    #+#             */
-/*   Updated: 2024/01/22 08:02:49 by yscheef          ###   ########.fr       */
+/*   Updated: 2024/04/04 17:56:51 by ndivjak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ private:
 public:
     Weapon(std::string type);
     ~Weapon(void);
+    // TODO: Should probably add const to the function definition
     const std::string &getType(void);
     void setType(std::string type);
 };
