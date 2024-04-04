@@ -6,7 +6,7 @@
 /*   By: yscheef <yscheef@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 23:57:00 by yscheef           #+#    #+#             */
-/*   Updated: 2024/01/22 04:09:59 by yscheef          ###   ########.fr       */
+/*   Updated: 2024/04/04 14:01:53 by yscheef          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,35 +14,19 @@
 
 int main()
 {
-    Fixed px, py;
-    Fixed ax, ay, bx, by, cx, cy;
+    // 0 0 1 2 2 0 1 1 -> inside
+    // 0 0 1 2 2 0 1 5 -> outside
 
-    // Prompt and input for the point
-    std::cout << "Enter the point coordinates (x y): ";
-    std::cin >> px >> py;
-    Point p(px, py);
+    float ax, ay, bx, by, cx, cy, px, py;
+    std::cout << "Enter triangle vertices A (x, y), B (x, y), C (x, y) and point P (x, y): ";
+    std::cin >> ax >> ay >> bx >> by >> cx >> cy >> px >> py;
 
-    // Prompt and input for the triangle vertices
-    std::cout << "Enter the first vertex of the triangle (x y): ";
-    std::cin >> ax >> ay;
-    Point a(ax, ay);
+    Point a(ax, ay), b(bx, by), c(cx, cy), p(px, py);
 
-    std::cout << "Enter the second vertex of the triangle (x y): ";
-    std::cin >> bx >> by;
-    Point b(bx, by);
-
-    std::cout << "Enter the third vertex of the triangle (x y): ";
-    std::cin >> cx >> cy;
-    Point c(cx, cy);
-
-    if (isPointInsideTriangle(p, a, b, c))
-    {
+    if (bsp(a, b, c, p))
         std::cout << "Point is inside the triangle." << std::endl;
-    }
     else
-    {
         std::cout << "Point is outside the triangle." << std::endl;
-    }
 
     return 0;
 }
