@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yscheef <yscheef@student.42vienna.com>     +#+  +:+       +#+        */
+/*   By: ndivjak <ndivjak@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/23 16:25:33 by yscheef           #+#    #+#             */
-/*   Updated: 2024/03/29 10:51:58 by yscheef          ###   ########.fr       */
+/*   Updated: 2024/04/04 18:13:48 by ndivjak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int harl_translate(std::string input)
     return (-1);
 }
 
+// TODO: No if statements
 void check_level(std::string input, Harl &h)
 {
     int level = harl_translate(input);

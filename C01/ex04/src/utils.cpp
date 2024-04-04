@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yscheef <yscheef@student.42vienna.com>     +#+  +:+       +#+        */
+/*   By: ndivjak <ndivjak@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 07:16:42 by yscheef           #+#    #+#             */
-/*   Updated: 2024/03/29 10:31:49 by yscheef          ###   ########.fr       */
+/*   Updated: 2024/04/04 18:02:52 by ndivjak          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int ft_replace(const std::string &filename, const std::string &oldStr, const std
     size_t pos = 0;
     size_t lastPos = 0;
 
+    // TODO: Should probably remove ChatGPT style comments
     // Manual replacement logic remains unchanged
     while ((pos = content.find(oldStr, lastPos)) != std::string::npos)
     {
