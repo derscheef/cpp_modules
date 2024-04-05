@@ -6,7 +6,7 @@
 /*   By: yscheef <yscheef@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 23:56:50 by yscheef           #+#    #+#             */
-/*   Updated: 2024/01/22 06:58:07 by yscheef          ###   ########.fr       */
+/*   Updated: 2024/04/04 22:07:17 by yscheef          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 #include "Zombie.hpp"
 
+Zombie *newZombie(std::string name);
 void randomChump(std::string name);
 
 #endif
