@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yscheef <yscheef@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/20 23:57:00 by yscheef           #+#    #+#             */
-/*   Updated: 2024/04/05 13:37:31 by yscheef          ###   ########.fr       */
+/*   Created: 2024/01/20 23:56:58 by yscheef           #+#    #+#             */
+/*   Updated: 2024/04/05 12:09:43 by yscheef          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headerfiles/Head.hpp"
+#ifndef ANIMAL_HPP
+#define ANIMAL_HPP
 
-int main()
+class Animal
 {
-    const Animal *j = new Dog();
-    const Animal *i = new Cat();
-    delete j; // should not create a leak
-    delete i;
+protected:
+    std::string type;
+    std::string sound;
 
-    return 0;
-}
+public:
+    Animal();
+    Animal(std::string type);
+    Animal(const Animal &src);
+    virtual ~Animal();
+    Animal &operator=(const Animal &src);
+    void setType(std::string type);
+    const std::string getType(void) const;
+    void makeSound(void) const;
+};
+
+#endif

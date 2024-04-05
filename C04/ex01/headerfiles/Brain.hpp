@@ -1,23 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yscheef <yscheef@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/20 23:57:00 by yscheef           #+#    #+#             */
-/*   Updated: 2024/04/05 13:37:31 by yscheef          ###   ########.fr       */
+/*   Created: 2024/04/05 13:34:25 by yscheef           #+#    #+#             */
+/*   Updated: 2024/04/05 13:38:13 by yscheef          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headerfiles/Head.hpp"
+#ifndef BRAIN_HPP
+#define BRAIN_HPP
 
-int main()
+#include "Head.hpp"
+
+class Brain
 {
-    const Animal *j = new Dog();
-    const Animal *i = new Cat();
-    delete j; // should not create a leak
-    delete i;
+private:
+    std::string ideas[100];
 
-    return 0;
-}
+public:
+    Brain();
+    Brain(const Brain &src);
+    ~Brain();
+    Brain &operator=(const Brain &src);
+
+    std::string getIdea(int i) const;
+    void setIdea(int i, std::string idea);
+};
+
+#endif
