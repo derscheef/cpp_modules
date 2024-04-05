@@ -6,7 +6,7 @@
 /*   By: yscheef <yscheef@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 11:49:44 by yscheef           #+#    #+#             */
-/*   Updated: 2024/04/05 12:23:12 by yscheef          ###   ########.fr       */
+/*   Updated: 2024/04/05 19:56:28 by yscheef          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@ class WrongCat : public WrongAnimal
 public:
     WrongCat();
     WrongCat(const WrongCat &src);
-    virtual ~WrongCat();
+    ~WrongCat();
     WrongCat &operator=(const WrongCat &src);
+    void makeSound(void) const;
 };
 
 #endif

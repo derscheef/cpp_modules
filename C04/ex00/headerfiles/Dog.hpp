@@ -6,7 +6,7 @@
 /*   By: yscheef <yscheef@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 11:52:34 by yscheef           #+#    #+#             */
-/*   Updated: 2024/04/05 11:52:59 by yscheef          ###   ########.fr       */
+/*   Updated: 2024/04/05 19:47:36 by yscheef          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ public:
     Dog(const Dog &src);
     virtual ~Dog();
     Dog &operator=(const Dog &src);
+    void makeSound(void) const;
 };
 
 #endif

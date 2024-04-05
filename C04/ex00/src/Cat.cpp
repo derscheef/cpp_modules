@@ -6,7 +6,7 @@
 /*   By: yscheef <yscheef@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 11:51:28 by yscheef           #+#    #+#             */
-/*   Updated: 2024/04/05 14:26:33 by yscheef          ###   ########.fr       */
+/*   Updated: 2024/04/05 19:42:27 by yscheef          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 Cat::Cat() : Animal("Cat")
 {
-    this->sound = "Meow";
     std::cout << "Cat constructor called" << std::endl;
 }
 
@@ -33,4 +32,9 @@ Cat &Cat::operator=(const Cat &src)
     if (this != &src)
         Animal::operator=(src);
     return *this;
+}
+
+void Cat::makeSound(void) const
+{
+    std::cout << "Cat makes meooooowwwwwwwww" << std::endl;
 }

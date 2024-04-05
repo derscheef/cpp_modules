@@ -6,7 +6,7 @@
 /*   By: yscheef <yscheef@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 11:53:25 by yscheef           #+#    #+#             */
-/*   Updated: 2024/04/05 14:26:41 by yscheef          ###   ########.fr       */
+/*   Updated: 2024/04/05 19:42:24 by yscheef          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 Dog::Dog() : Animal("Dog")
 {
-    this->sound = "Woof";
     std::cout << "Dog constructor called" << std::endl;
 }
 
@@ -34,4 +33,9 @@ Dog &Dog::operator=(const Dog &src)
     if (this != &src)
         Animal::operator=(src);
     return *this;
+}
+
+void Dog::makeSound(void) const
+{
+    std::cout << "Dog makes woooooooooof" << std::endl;
 }

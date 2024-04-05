@@ -6,7 +6,7 @@
 /*   By: yscheef <yscheef@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 11:49:44 by yscheef           #+#    #+#             */
-/*   Updated: 2024/04/05 11:53:10 by yscheef          ###   ########.fr       */
+/*   Updated: 2024/04/05 19:47:31 by yscheef          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ public:
     Cat(const Cat &src);
     virtual ~Cat();
     Cat &operator=(const Cat &src);
+    void makeSound(void) const;
 };
 
 #endif

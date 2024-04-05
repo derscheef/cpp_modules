@@ -6,7 +6,7 @@
 /*   By: yscheef <yscheef@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 22:26:52 by yscheef           #+#    #+#             */
-/*   Updated: 2024/04/05 14:29:40 by yscheef          ###   ########.fr       */
+/*   Updated: 2024/04/05 19:56:13 by yscheef          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ Animal &Animal::operator=(const Animal &src)
     if (this != &src)
     {
         this->type = src.type;
-        this->sound = src.sound;
     }
     std::cout << "Animal assignation operator called" << std::endl;
     return *this;
@@ -57,8 +56,5 @@ const std::string Animal::getType(void) const
 
 void Animal::makeSound(void) const
 {
-    if (this->sound.empty())
-        std::cout << "Animal make sound" << std::endl;
-    else
-        std::cout << "Animal make " << this->sound << std::endl;
+    std::cout << "Animal makes some sound" << std::endl;
 }

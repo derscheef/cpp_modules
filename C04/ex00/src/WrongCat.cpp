@@ -33,3 +33,8 @@ WrongCat &WrongCat::operator=(const WrongCat &src)
     this->type = src.type;
     return *this;
 }
+
+void WrongCat::makeSound(void) const
+{
+    std::cout << "Cat goes meowwwwwww" << std::endl;
+}
