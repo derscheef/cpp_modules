@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Head.hpp                                           :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yscheef <yscheef@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/20 23:56:50 by yscheef           #+#    #+#             */
-/*   Updated: 2024/04/05 12:20:02 by yscheef          ###   ########.fr       */
+/*   Created: 2024/04/05 11:49:44 by yscheef           #+#    #+#             */
+/*   Updated: 2024/04/05 12:23:12 by yscheef          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEAD_HPP
-#define HEAD_HPP
+#ifndef WRONGCAT_HPP
+#define WRONGCAT_HPP
 
-#include <iostream>
-#include <iomanip>
+#include "Head.hpp"
 
-#include "Animal.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
-#include "WrongAnimal.hpp"
-#include "WrongCat.hpp"
+class WrongCat : public WrongAnimal
+{
+
+public:
+    WrongCat();
+    WrongCat(const WrongCat &src);
+    virtual ~WrongCat();
+    WrongCat &operator=(const WrongCat &src);
+};
 
 #endif
