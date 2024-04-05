@@ -6,7 +6,7 @@
 /*   By: yscheef <yscheef@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 23:56:58 by yscheef           #+#    #+#             */
-/*   Updated: 2024/04/05 13:52:00 by yscheef          ###   ########.fr       */
+/*   Updated: 2024/04/05 20:00:58 by yscheef          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ public:
     Animal &operator=(const Animal &src);
     void setType(std::string type);
     const std::string getType(void) const;
-    void makeSound(void) const;
+    virtual void makeSound(void) const = 0;
 };
 
 #endif
