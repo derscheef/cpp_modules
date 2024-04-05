@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: yscheef <yscheef@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/05 11:51:28 by yscheef           #+#    #+#             */
-/*   Updated: 2024/04/05 14:17:06 by yscheef          ###   ########.fr       */
+/*   Created: 2024/04/05 11:53:25 by yscheef           #+#    #+#             */
+/*   Updated: 2024/04/05 14:23:00 by yscheef          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ Dog::Dog(const Dog &copy) : Animal(copy)
 
 Dog::~Dog()
 {
-    delete this->brain;
+    if (this->brain)
+        delete this->brain;
     std::cout << "Dog destructor called" << std::endl;
 }
 

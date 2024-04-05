@@ -6,7 +6,7 @@
 /*   By: yscheef <yscheef@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 11:51:28 by yscheef           #+#    #+#             */
-/*   Updated: 2024/04/05 13:43:30 by yscheef          ###   ########.fr       */
+/*   Updated: 2024/04/05 14:17:30 by yscheef          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,23 @@ Cat::Cat(const Cat &copy) : Animal(copy)
 
 Cat::~Cat()
 {
-    delete this->brain;
+    if (this->brain)
+        delete this->brain;
     std::cout << "Cat destructor called" << std::endl;
 }
 
 Cat &Cat::operator=(const Cat &src)
 {
-    this->type = src.type;
-    this->sound = src.sound;
-    this->brain = src.brain;
+    if (this != &src)
+    {
+        Animal::operator=(src);
+        delete brain;
+        brain = new Brain(*src.brain);
+    }
     return *this;
+}
+
+Brain &Cat::getBrain() const
+{
+    return *brain;
 }

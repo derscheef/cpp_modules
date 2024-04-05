@@ -6,18 +6,19 @@
 /*   By: yscheef <yscheef@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 23:56:50 by yscheef           #+#    #+#             */
-/*   Updated: 2024/01/22 04:05:35 by yscheef          ###   ########.fr       */
+/*   Updated: 2024/04/05 13:40:06 by yscheef          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_HPP
-#define HEADER_HPP
+#ifndef HEAD_HPP
+#define HEAD_HPP
 
 #include <iostream>
 #include <iomanip>
 
-#include "Class.hpp"
-
-// function declarations
+#include "Animal.hpp"
+#include "Brain.hpp"
+#include "Cat.hpp"
+#include "Dog.hpp"
 
 #endif

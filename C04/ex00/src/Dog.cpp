@@ -6,7 +6,7 @@
 /*   By: yscheef <yscheef@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 11:53:25 by yscheef           #+#    #+#             */
-/*   Updated: 2024/04/05 12:10:32 by yscheef          ###   ########.fr       */
+/*   Updated: 2024/04/05 14:26:41 by yscheef          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ Dog::~Dog()
 
 Dog &Dog::operator=(const Dog &src)
 {
-    this->type = src.type;
+    if (this != &src)
+        Animal::operator=(src);
     return *this;
 }

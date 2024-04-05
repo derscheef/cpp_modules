@@ -1,21 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   item.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yscheef <yscheef@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/21 00:33:33 by yscheef           #+#    #+#             */
-/*   Updated: 2024/01/22 04:11:47 by yscheef          ###   ########.fr       */
+/*   Created: 2024/04/05 11:49:44 by yscheef           #+#    #+#             */
+/*   Updated: 2024/04/05 13:58:00 by yscheef          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headerfiles/Head.hpp"
+#ifndef CAT_HPP
+#define CAT_HPP
 
-Item::Item()
-{
-}
+#include "Head.hpp"
 
-Item::~Item()
+class Cat : public Animal
 {
-}
+private:
+    Brain *brain;
+
+public:
+    Cat();
+    Cat(const Cat &src);
+    virtual ~Cat();
+    Cat &operator=(const Cat &src);
+    Brain &getBrain() const;
+};
+
+#endif

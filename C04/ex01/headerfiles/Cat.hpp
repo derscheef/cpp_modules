@@ -6,7 +6,7 @@
 /*   By: yscheef <yscheef@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 11:49:44 by yscheef           #+#    #+#             */
-/*   Updated: 2024/04/05 13:39:55 by yscheef          ###   ########.fr       */
+/*   Updated: 2024/04/05 14:02:56 by yscheef          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ public:
     Cat(const Cat &src);
     virtual ~Cat();
     Cat &operator=(const Cat &src);
+    Brain &getBrain() const;
 };
 
 #endif

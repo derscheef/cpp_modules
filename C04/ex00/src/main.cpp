@@ -6,7 +6,7 @@
 /*   By: yscheef <yscheef@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 23:57:00 by yscheef           #+#    #+#             */
-/*   Updated: 2024/04/05 13:09:30 by yscheef          ###   ########.fr       */
+/*   Updated: 2024/04/05 14:30:05 by yscheef          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@ int main()
     i->makeSound(); // will output the cat sound!
     j->makeSound();
     meta->makeSound();
+    delete meta;
+    delete j;
+    delete i;
     return 0;
 }
 
