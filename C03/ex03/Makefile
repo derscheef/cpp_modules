@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME        := $(notdir $(patsubst %/,%,$(CURDIR))).out.out
+NAME        := $(notdir $(patsubst %/,%,$(CURDIR))).out
 SRCS        := $(wildcard src/*.cpp)
 OBJS_DIR    := objs/
 OBJS        := $(SRCS:src/%.cpp=$(OBJS_DIR)%.o)

@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Head.hpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yscheef <yscheef@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/20 23:56:50 by yscheef           #+#    #+#             */
-/*   Updated: 2024/04/05 11:51:42 by yscheef          ###   ########.fr       */
+/*   Created: 2024/04/05 11:49:44 by yscheef           #+#    #+#             */
+/*   Updated: 2024/04/05 11:53:10 by yscheef          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEAD_HPP
-#define HEAD_HPP
+#ifndef CAT_HPP
+#define CAT_HPP
 
-#include <iostream>
-#include <iomanip>
+#include "Head.hpp"
 
-#include "Animal.hpp"
-#include "Cat.hpp"
-#include "Dog.hpp"
+class Cat : public Animal
+{
+
+public:
+    Cat();
+    Cat(const Cat &src);
+    virtual ~Cat();
+    Cat &operator=(const Cat &src);
+};
 
 #endif

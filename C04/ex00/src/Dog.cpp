@@ -1,26 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yscheef <yscheef@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/20 23:57:00 by yscheef           #+#    #+#             */
-/*   Updated: 2024/04/05 11:39:24 by yscheef          ###   ########.fr       */
+/*   Created: 2024/04/05 11:53:25 by yscheef           #+#    #+#             */
+/*   Updated: 2024/04/05 12:10:32 by yscheef          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headerfiles/Head.hpp"
 
-int main()
+Dog::Dog() : Animal("Dog")
 {
-    const Animal *meta = new Animal();
-    const Animal *j = new Dog();
-    const Animal *i = new Cat();
-    std::cout << j->getType() << " " << std::endl;
-    std::cout << i->getType() << " " << std::endl;
-    i->makeSound(); // will output the cat sound!
-    j->makeSound();
-    meta->makeSound();
-    return 0;
+    this->sound = "Woof";
+    std::cout << "Dog constructor called" << std::endl;
+}
+
+Dog::Dog(const Dog &copy) : Animal(copy)
+{
+    *this = copy;
+    std::cout << "Dog copy constructor called" << std::endl;
+}
+
+Dog::~Dog()
+{
+    std::cout << "Dog destructor called" << std::endl;
+}
+
+Dog &Dog::operator=(const Dog &src)
+{
+    this->type = src.type;
+    return *this;
 }
