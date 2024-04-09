@@ -49,11 +49,3 @@ const std::string Animal::getType(void) const
 {
     return this->type;
 }
-
-void Animal::makeSound(void) const
-{
-    if (this->sound.empty())
-        std::cout << "Animal make sound" << std::endl;
-    else
-        std::cout << "Animal make " << this->sound << std::endl;
-}

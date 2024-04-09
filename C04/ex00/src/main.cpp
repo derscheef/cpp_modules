@@ -27,7 +27,8 @@ int main()
     delete i;
 
     std::cout << std::endl;
-
+    const WrongCat rudolph = WrongCat();
+    rudolph.makeSound();
     const WrongAnimal *meta2 = new WrongAnimal();
     const WrongAnimal *i2 = new WrongCat();
     std::cout << i2->getType() << " " << std::endl;

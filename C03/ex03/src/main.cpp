@@ -21,5 +21,6 @@ int main(void)
     r.takeDamage(5);
     r.beRepaired(3);
     r.highFivesGuys();
+    r.whoAmI();
     return 0;
 }

@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 NAME        := $(notdir $(patsubst %/,%,$(CURDIR))).out
-SRCS        := $(wildcard src/*.cpp)
+SRCS        := src/Animal.cpp src/Brain.cpp src/Cat.cpp src/Dog.cpp src/main.cpp
 OBJS_DIR    := objs/
 OBJS        := $(SRCS:src/%.cpp=$(OBJS_DIR)%.o)
 OTHER_FILES := $(wildcard *.dSYM) $(wildcard *.log) $(wildcard *.txt) $(wildcard *.out)
