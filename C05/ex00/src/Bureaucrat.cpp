@@ -6,7 +6,7 @@
 /*   By: yscheef <yscheef@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 22:26:52 by yscheef           #+#    #+#             */
-/*   Updated: 2024/05/06 15:40:57 by yscheef          ###   ########.fr       */
+/*   Updated: 2024/05/06 16:55:52 by yscheef          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,25 @@ std::string Bureaucrat::getName() const
 
 void Bureaucrat::setGrade(int grade)
 {
+    if (grade < 1)
+    {
+        throw Bureaucrat::GradeTooHighException();
+    }
+    else if (grade > 150)
+    {
+        throw Bureaucrat::GradeTooLowException();
+    }
     this->_grade = grade;
 }
 
 int Bureaucrat::getGrade() const
 {
     return this->_grade;
+}
+
+std::ostream &operator<<(std::ostream &out, const Bureaucrat &bureaucrat)
+{
+    out << "Name: " << bureaucrat.getName() << std::endl;
+    out << "Grade: " << bureaucrat.getGrade() << std::endl;
+    return out;
 }
