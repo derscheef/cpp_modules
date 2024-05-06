@@ -6,15 +6,18 @@
 #    By: yscheef <yscheef@student.42vienna.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/21 18:10:05 by yscheef           #+#    #+#              #
-#    Updated: 2024/05/03 13:15:25 by yscheef          ###   ########.fr        #
+#    Updated: 2024/05/06 15:41:47 by yscheef          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME        := $(notdir $(patsubst %/,%,$(CURDIR))).out
-SRCS        := src/Cat.cpp src/Dog.cpp src/main.cpp src/WrongAnimal.cpp src/WrongCat.cpp
+
+SRCS:= src/Bureaucrat.cpp src/main.cpp
+
 OBJS_DIR    := objs/
 OBJS        := $(SRCS:src/%.cpp=$(OBJS_DIR)%.o)
 OTHER_FILES := $(wildcard *.dSYM) $(wildcard *.log) $(wildcard *.txt) $(wildcard *.out)
+
 
 CPP         := c++
 CPPFLAGS    := -Wall -Wextra -Werror -std=c++98
@@ -67,6 +70,7 @@ update-sources:
 	@echo "Updating SRCSin Makefile..."
 	@SOURCE_FILES=$$(find ./src -type f -name '*.cpp' -print | sed 's|^\./||' | tr '\n' ' '); \
 	echo "Files to add: $$SOURCE_FILES"; \
-	sed "/^SRCS:=/ s|:=.*|:= $$SOURCE_FILES|" Makefile
+	sed -i.tmp "/^SRCS:=/ s|:=.*|:= $$SOURCE_FILES|" Makefile
+	@rm Makefile.tmp
 
 .PHONY: all clean fclean re debug_build soft valgrind leaks update-sources

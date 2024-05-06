@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yscheef <yscheef@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 23:56:58 by yscheef           #+#    #+#             */
-/*   Updated: 2024/04/05 19:45:32 by yscheef          ###   ########.fr       */
+/*   Updated: 2024/05/06 15:34:14 by yscheef          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#ifndef Bureaucrat_HPP
+#define Bureaucrat_HPP
 
-class Animal
+#include <iostream>
+
+class Bureaucrat
 {
-protected:
-    std::string type;
+private:
+    std::string _name;
+    int _grade;
 
 public:
-    Animal();
-    Animal(std::string type);
-    Animal(const Animal &src);
-    virtual ~Animal();
-    Animal &operator=(const Animal &src);
-    void setType(std::string type);
-    const std::string getType(void) const;
-    virtual void makeSound(void) const;
+    // canonical form
+    Bureaucrat();
+    Bureaucrat(const Bureaucrat &src);
+    ~Bureaucrat();
+    Bureaucrat &operator=(const Bureaucrat &src);
+
+    // getters and setters
+    void setName(std::string name);
+    std::string getName() const;
+    void setGrade(int grade);
+    int getGrade() const;
 };
 
 #endif
