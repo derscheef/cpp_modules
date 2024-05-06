@@ -6,17 +6,17 @@
 #    By: yscheef <yscheef@student.42vienna.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/21 18:10:05 by yscheef           #+#    #+#              #
-#    Updated: 2024/05/06 15:41:47 by yscheef          ###   ########.fr        #
+#    Updated: 2024/05/06 17:19:41 by yscheef          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME        := $(notdir $(patsubst %/,%,$(CURDIR))).out
 
-SRCS:= src/Bureaucrat.cpp src/main.cpp
+SRCS:= src/Bureaucrat.cpp src/main.cpp 
 
 OBJS_DIR    := objs/
 OBJS        := $(SRCS:src/%.cpp=$(OBJS_DIR)%.o)
-OTHER_FILES := $(wildcard *.dSYM) $(wildcard *.log) $(wildcard *.txt) $(wildcard *.out)
+OTHER_FILES := $(wildcard *.dSYM) $(wildcard *.log) $(wildcard *.txt)
 
 
 CPP         := c++
@@ -27,7 +27,7 @@ MKDIR       := mkdir -p
 VALGRIND    := valgrind
 LEAKS       := leaks
 
-all: $(OBJS_DIR) $(NAME)
+all: update-sources $(OBJS_DIR) $(NAME)
 
 $(OBJS_DIR):
 	@$(MKDIR) $(OBJS_DIR)
@@ -47,9 +47,11 @@ clean:
 	@$(RM) $(OTHER_FILES)
 
 fclean: clean
-	@echo "Cleaning executable files"
+	@echo "Cleaning executable file"
 	@$(RM) $(NAME)
-	@echo "Cleaning files"
+	@echo "Cleaning object files"
+	@$(RM) -r $(OBJS_DIR)
+	@echo "Cleaning other files"
 	@$(RM) $(OTHER_FILES)
 
 re: fclean all
@@ -67,10 +69,17 @@ leaks: debug_build
 	@$(LEAKS) --atExit -- ./$(NAME)
 
 update-sources:
-	@echo "Updating SRCSin Makefile..."
-	@SOURCE_FILES=$$(find ./src -type f -name '*.cpp' -print | sed 's|^\./||' | tr '\n' ' '); \
-	echo "Files to add: $$SOURCE_FILES"; \
-	sed -i.tmp "/^SRCS:=/ s|:=.*|:= $$SOURCE_FILES|" Makefile
+	@#@echo "Updating SRCSin Makefile..."
+	@SOURCE_FILES=$$(find ./src -type f -name '*.cpp' -print | sed 's|^\./||' | tr '\n' ' '); sed -i.tmp "/^SRCS:=/ s|:=.*|:= $$SOURCE_FILES|" Makefile
+	@#@echo "Files to add: $$SOURCE_FILES";
 	@rm Makefile.tmp
+	
+	@# Could have been 
+	@# SRCS        := $(wildcard src/*.cpp)
+	@# Zekao this is for you
 
-.PHONY: all clean fclean re debug_build soft valgrind leaks update-sources
+run: all
+	@clear
+	@./$(NAME)
+
+.PHONY: all clean fclean re debug_build soft valgrind leaks update-sources run

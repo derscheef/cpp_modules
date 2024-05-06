@@ -6,7 +6,7 @@
 /*   By: yscheef <yscheef@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 23:56:58 by yscheef           #+#    #+#             */
-/*   Updated: 2024/05/06 16:52:33 by yscheef          ###   ########.fr       */
+/*   Updated: 2024/05/06 16:58:12 by yscheef          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,10 @@ public:
     std::string getName() const;
     void setGrade(int grade);
     int getGrade() const;
+
+    // inc and dec
+    void incrementGrade();
+    void decrementGrade();
 
     // exceptions
     class GradeTooHighException : public std::exception
