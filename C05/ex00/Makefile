@@ -6,7 +6,7 @@
 #    By: yscheef <yscheef@student.42vienna.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/21 18:10:05 by yscheef           #+#    #+#              #
-#    Updated: 2024/05/06 17:19:41 by yscheef          ###   ########.fr        #
+#    Updated: 2024/05/06 18:26:53 by yscheef          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,10 +49,6 @@ clean:
 fclean: clean
 	@echo "Cleaning executable file"
 	@$(RM) $(NAME)
-	@echo "Cleaning object files"
-	@$(RM) -r $(OBJS_DIR)
-	@echo "Cleaning other files"
-	@$(RM) $(OTHER_FILES)
 
 re: fclean all
 
