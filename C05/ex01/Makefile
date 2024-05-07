@@ -12,7 +12,7 @@
 
 NAME        := $(notdir $(patsubst %/,%,$(CURDIR))).out
 
-SRCS:= src/Bureaucrat.cpp src/main.cpp 
+SRCS:= src/Bureaucrat.cpp src/Form.cpp src/main.cpp 
 
 OBJS_DIR    := objs/
 OBJS        := $(SRCS:src/%.cpp=$(OBJS_DIR)%.o)

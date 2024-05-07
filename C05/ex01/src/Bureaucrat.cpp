@@ -6,15 +6,28 @@
 /*   By: yscheef <yscheef@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 22:26:52 by yscheef           #+#    #+#             */
-/*   Updated: 2024/05/06 17:00:13 by yscheef          ###   ########.fr       */
+/*   Updated: 2024/05/07 10:43:01 by yscheef          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headerfiles/Head.hpp"
+#include "../headerfiles/Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat()
 {
     std::cout << "Bureaucrat default constructor called" << std::endl;
+}
+
+Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
+{
+    std::cout << "Bureaucrat constructor called" << std::endl;
+    if (grade < 1)
+    {
+        throw Bureaucrat::GradeTooHighException();
+    }
+    else if (grade > 150)
+    {
+        throw Bureaucrat::GradeTooLowException();
+    }
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &src)
@@ -93,4 +106,24 @@ void Bureaucrat::decrementGrade()
     }
     this->_grade++;
     std::cout << "Grade decremented to " << this->_grade << std::endl;
+}
+
+void Bureaucrat::signForm(Form &form)
+{
+    if (form.getSigned())
+    {
+        std::cout << "Form is already signed" << std::endl;
+    }
+    else
+    {
+        try
+        {
+            form.beSigned(*this);
+            std::cout << "Form signed by " << this->getName() << std::endl;
+        }
+        catch (std::exception &e)
+        {
+            std::cout << this->getName() << " cannot sign " << form.getName() << " because " << e.what() << std::endl;
+        }
+    }
 }
