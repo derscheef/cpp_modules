@@ -6,7 +6,7 @@
 /*   By: yscheef <yscheef@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 23:57:00 by yscheef           #+#    #+#             */
-/*   Updated: 2024/05/07 12:17:45 by yscheef          ###   ########.fr       */
+/*   Updated: 2024/05/07 15:08:26 by yscheef          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int main(void)
 {
     Bureaucrat bureaucrat("Axe", 11);
     // Bureaucrat bureaucrat("Taylor", 9);
-    Form form("Agreement not to trade", 10);
+    Form form("Agreement not to trade", 10, 10);
 
     try
     {

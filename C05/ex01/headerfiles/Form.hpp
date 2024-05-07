@@ -6,7 +6,7 @@
 /*   By: yscheef <yscheef@student.42vienna.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 23:56:58 by yscheef           #+#    #+#             */
-/*   Updated: 2024/05/07 10:49:17 by yscheef          ###   ########.fr       */
+/*   Updated: 2024/05/07 14:54:12 by yscheef          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ private:
 public:
     // canonical form
     Form();
-    Form(const std::string name, int gradeToSign);
+    Form(const std::string name, int gradeToSign, int gradeToExecute);
     Form(const Form &src);
     ~Form();
     Form &operator=(const Form &src);
